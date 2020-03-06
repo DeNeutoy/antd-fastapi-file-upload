@@ -1,0 +1,7 @@
+
+# Server
+fastapi
+uvicorn
+
+# used for form parsing
+python-multipart

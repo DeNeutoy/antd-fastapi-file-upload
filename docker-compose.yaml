@@ -1,0 +1,17 @@
+version: '3'
+services:
+    api:
+        build: ./api
+        environment:
+            # This ensures that errors are printed as they occur, which
+            # makes debugging easier.
+            PYTHONUNBUFFERED: 1
+            LOG_LEVEL: DEBUG
+        command: ["main:app", "--host", "0.0.0.0", "--reload"]
+    ui:
+        build: ./ui
+    proxy:
+        build: ./proxy
+        ports:
+            - '8080:80'
+
